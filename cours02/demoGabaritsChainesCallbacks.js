@@ -45,11 +45,17 @@ noms.forEach(saluer);
 // MÉTHODES SUR LES TABLEAUX AVEC CALLBACKS
 // .map() retourne un nouveau tableau composé des images de la fonction de rappel
 const enMajuscules = elm => elm.toUpperCase();
-const nomsMujscules = noms.map(enMajuscules );
-console.log(nomsMujscules);
+const nomsMajscules = noms.map(enMajuscules );
+console.log(nomsMajscules);
 
 const auCarre = (element, indice, tableau) => tableau[indice] = Math.pow(element, 2);
-console.log( nombres.map(auCarre) );
+console.log( "nombres APRÈS .map(auCarre) =", nombres.map(auCarre) ); // ceci va modifier le tableau nombres! Car on réaffecte les valeurs dans auCarre()
+console.log( "nombres (original, mais modifié)  =", nombres )
+// Pour ne pas modifier le tableau original, voici une autre fonction
+const auCarreSansModifier = element => element * element;
+for(let i in nombres) nombres[i] = parseInt(i) + 1; // on remet les valeurs originales
+console.log("nombres APRÈS .map(auCarreSansModifier) =", nombres.map(auCarreSansModifier));
+console.log("nombres (original) =", nombres);
 
 // .filter() va retourner un nouveau tableau contenant les éléments qui respectent 
 // la condition du filtre. Si aucun élément ne respecte la condition, c'est un tableau 
@@ -76,6 +82,9 @@ console.log(`Il y a ${nbCourts} noms de moins de 6 lettre dans la liste noms.`);
 // Autre façon de faire (avec une expression ternaire) :
 nbCourts = noms.reduce( (nbCourts, element) => ((element.length < 6)? nbCourts+1 : nbCourts), 0);
 console.log(`Il y a ${nbCourts} noms de moins de 6 lettre dans la liste noms.`);
+
+let x = nombres.reduce((x, elm) => ((elm % 2 === 0)? x + elm : x), 0);
+console.log("nombres =", nombres, `x = somme des pairs du tableau 'nombres' =`, x);
 
 
 /* BOUCLES for of / for in */
