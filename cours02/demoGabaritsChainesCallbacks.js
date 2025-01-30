@@ -46,7 +46,7 @@ noms.forEach(saluer);
 // .map() retourne un nouveau tableau composé des images de la fonction de rappel
 const enMajuscules = elm => elm.toUpperCase();
 const nomsMajscules = noms.map(enMajuscules );
-console.log(nomsMajscules);
+console.log(noms, nomsMajscules);
 
 const auCarre = (element, indice, tableau) => tableau[indice] = Math.pow(element, 2);
 console.log( "nombres APRÈS .map(auCarre) =", nombres.map(auCarre) ); // ceci va modifier le tableau nombres! Car on réaffecte les valeurs dans auCarre()
@@ -83,8 +83,8 @@ console.log(`Il y a ${nbCourts} noms de moins de 6 lettre dans la liste noms.`);
 nbCourts = noms.reduce( (nbCourts, element) => ((element.length < 6)? nbCourts+1 : nbCourts), 0);
 console.log(`Il y a ${nbCourts} noms de moins de 6 lettre dans la liste noms.`);
 
-let x = nombres.reduce((x, elm) => ((elm % 2 === 0)? x + elm : x), 0);
-console.log("nombres =", nombres, `x = somme des pairs du tableau 'nombres' =`, x);
+let x = nombres.reduce((x, elm) => ((elm % 2 === 1)? x + elm : x), 0);
+console.log("nombres =", nombres, `x = somme des impairs du tableau 'nombres' =`, x);
 
 
 /* BOUCLES for of / for in */
