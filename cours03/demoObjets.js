@@ -46,12 +46,12 @@ const personne1 = {
 };
 console.log("1. Objet personne1 :", personne1);
 // b) Création d'un objet avec le constructeur de la classe Object
-const personne2 = new Object({nom: "Bob", age: 25});
+//const personne2 = new Object({nom: "Bob", age: 25});
 // Similairement, on peut créer un objet vide avec le constructeur Object
 // et ajouter des propriétés par la suite
-// const personne2 = new Object();
-// personne2.nom = "Bob";
-// personne2.age = 25;
+ const personne2 = new Object();
+ personne2.nom = "Bob";
+ personne2.age = 25;
 console.log("1. Objet personne2 :", personne2);
 
 // 2. Accès aux propriétés de l'objet
